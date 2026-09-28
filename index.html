@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcos Pablo Dev</title>
+    <meta name="description" content="Sou Marcos Pablo, desenvolvedor Front-End. Crio sites modernos, responsivos e bem estruturados. Veja meus projetos e entre em contato.">
+    <link rel="canonical" href="https://www.marcospablo.dev">
+    <link rel="shortcut icon" href="./imagens/favicon/favicon.png" type="image/x-icon">
+
+    <!-- font -->
+    <link rel="preload" as="font" href="./fonts/Poppins/Poppins-ExtraLight.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="./fonts/Poppins/Poppins-Bold.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="./fonts/Poppins/Poppins-Black.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="./fonts/Lexend/Lexend-VariableFont_wght.woff2" type="font/woff2" crossorigin="anonymous">
+
+    <!-- Style -->
+    <link rel="preload" href="./css/hero-mobile-v1.css" as="style" media="(max-width: 768px)">
+    <link rel="preload" href="./css/hero-v3.5.8.css" as="style" media="(min-width: 769px)">
+    <link rel="preload" href="./css-main/main-copy-v1.css" as="style">
+    <link rel="stylesheet" href="./css/hero-mobile-v1.css" media="(max-width: 768px)">
+    <link rel="stylesheet" href="./css/hero-v3.5.8.css" media="(min-width: 769px)">
+    <link rel="stylesheet" href="./css-main/main-copy-v1.css">
+
+    <style>
+        @font-face {
+            font-family: "Poppins Black";
+            src: url("./fonts/Poppins/Poppins-Black.woff2") format("woff2");
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Poppins";
+            src: url("./fonts/Poppins/Poppins-Bold.woff2") format("woff2");
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Poppins Light";
+            src: url("./fonts/Poppins/Poppins-ExtraLight.woff2") format("woff2");
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Lexend";
+            src: url("./fonts/Lexend/Lexend-VariableFont_wght.woff2") format("woff2");
+            font-display: swap;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        html::-webkit-scrollbar {
+            width: 2px;
+            background-color: transparent;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background-color: var(--orange);
+        }
+
+        :root {
+            --midnight-green: #034B58;
+            --rich-black: #0D1F22;
+            --orange: #F3A712;
+            --light-s-green: #2EC4B6;
+        }
+
+        body {
+            background-color: var(--rich-black);
+            color: #fff;
+            width: 100%;
+            max-width: 1920px;
+            position: relative;
+            margin: auto;
+            font-family: "Lexend", sans-serif;
+        }
+
+        a {
+            -webkit-tap-highlight-color: transparent;
+            text-decoration: none;
+        }
+
+        .highlight {
+            font-family: "Poppins";
+        }
+
+        /*-- Header --*/
+
+        .header-container {
+            position: fixed;
+            width: 100%;
+            z-index: 4;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .menu-navigation {
+            scroll-target-group: auto;
+            display: flex;
+            list-style: none;
+        }
+
+        .lk-nav{
+            padding: 10px;
+            color: #fff;
+            font-family: "Poppins Light";
+        }
+
+                /*--Supports --*/
+
+        @supports not (scroll-target-group: auto) {
+            .menu-navigation li a.active, .menu-navigation li a:hover{
+                color: var(--orange);
+            }
+
+            .menu-navigation li a.active {
+                font-family: "Poppins";
+            }
+        }
+
+        @supports (scroll-target-group: auto) {
+            .menu-navigation li a:target-current , .menu-navigation li a:hover {
+                color: var(--orange);
+            }
+
+            .menu-navigation li a:target-current {
+                font-family: "Poppins";
+            }
+        }
+
+        /*-- End Header --*/
+
+        /*-- Hero --*/
+
+        .hero-container {
+            position: relative;
+            display: flex;
+            margin: auto;
+            background-color: var(--midnight-green);
+            box-shadow: 0 0 40px rgba(0,0,0,.3);
+        }
+
+        .content-hero {
+            width: 100%;
+        }
+
+        .pic-hero {
+            display: block;
+            width: 100%;
+        }
+
+        .perfil-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            box-shadow: 0 3px 8px rgba(0,0,0,.28);
+        }
+
+        body.loaded .perfil-img {
+            animation: slidein 3s linear infinite;
+        }
+
+        @keyframes slidein {
+            0%,100% {
+                transform: translateY(+5px);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+                /*-- Typography Hero --*/
+
+        h1 {
+            font-size: clamp(1.5rem, 7vw , 2.5rem);
+        }
+
+        h1 strong {
+            position: relative;
+            display: inline-block;
+            width: 11ch;
+            color: var(--orange);
+            font-size: clamp(2rem, 10vw, 4rem);
+            text-shadow: 0 1px 2px var(--rich-black);
+            overflow: hidden;
+            white-space: nowrap;
+            font-family: "Poppins Black", sans-serif;
+        }
+
+        h1 strong::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background-color: var(--orange);
+            animation: blink 0.8s step-end infinite;
+        }
+
+        body.loaded h1 strong {
+            animation: typing 3s steps(14) forwards;
+        }
+
+        @keyframes typing {
+        from {
+            width: 0ch;
+        }
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .content-hero h2 {
+            font-weight: normal;
+            font-style: italic;
+            text-align: start;
+        }
+
+        .content-hero p {
+            width: 100%;
+            font-weight: 100;
+            text-shadow: 0 1px 2px var(--rich-black);
+        }
+
+                /*-- End Typography Hero --*/
+
+                /*-- Button & Social Hero --*/
+
+        .social-media-hero {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+        }
+
+        .social-media ul {
+            display: flex;
+            list-style-type: none;
+            gap: 12px;
+        }
+
+        .link-hero-container {
+            position: relative;
+            width: 100%;
+            min-width: 200px;
+            height: 52px;
+        }
+
+        #lk-c-hero {
+            position: absolute;
+            display: flex;
+            font-size: 1.3rem;
+            width: 100%;
+            height: 100%;
+            inset: 0;
+            justify-content: center;
+            align-items: center;
+            color: var(--orange);
+            background: transparent;
+            border: 1px solid var(--orange);
+            border-radius: 5px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,.28);
+            z-index: 1;
+            transition: 0.2s ease-in-out;
+        }
+
+        .back-button {
+            position: absolute;
+            height: 52px;
+            background-color: var(--orange);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,.1);
+            inset: 0;
+            border-radius: 5px;
+            z-index: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: 0.1s ease-in-out;
+        }
+
+        .link-hero-container.active #lk-c-hero {
+            color: #fff;
+            will-change: color;
+        }
+
+        .link-hero-container.active .back-button{
+            transform: scaleX(1);
+        }
+
+                /*-- End Button & Social Hero --*/
+
+        /*-- End Hero --*/
+
+
+        footer {
+            font-weight: 200;
+            text-align: center;
+            padding: 12px;
+        }
+
+    </style>
+
+    <!-- Script -->
+     <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" onload="emailjs.init('ka_0K7h0GbXWdJhms');" defer>
+    </script>
+</head>
+<body>
+    <header class="header-container">
+        <nav class="navigation" aria-label="Menu principal">
+            <ul class="menu-navigation">
+                <li><a href="#home" class="lk-nav">Home</a></li>
+                <li><a href="#about" class="lk-nav">Sobre</a></li>
+                <li><a href="#portfolio" class="lk-nav">Portfólio</a></li>
+                <li><a href="#contact" class="lk-nav">Contato</a></li>
+            </ul>
+            <div class="btn-menu-header">
+                <button type="button" class="open-menu active" aria-label="Abrir menu" aria-expanded="false">
+                    <img src="./imagens/menu-icon/menu-icon.svg" loading="lazy" width="44" height="44"  alt="Abrir menu">
+                </button>
+                <button type="button" class="close-menu" aria-label="Fechar menu">
+                    <img src="./imagens/menu-icon/close-icon.svg" loading="lazy" width="44" height="44"  alt="Fechar menu">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-container todo" id="home">
+        <div class="content-hero">
+            <h1 class="highlight" aria-label="Olá, eu sou Marcos Pablo">Olá, eu sou<br> <strong aria-hidden="true">Marcos Pablo</strong></h1>
+            <h2 class="highlight">Desenvolvedor Front-end</h2>
+            <p>Amante do design e da tecnologia, estou sempre pronto para criar seu site com interfaces bonitas e modernas.</p>
+
+            <div class="link-hero-container">
+                <a href="#contact" id="lk-c-hero" class="highlight">Entre em contato</a>
+                <div class="back-button"></div>
+            </div>
+        </div>
+
+        <picture class="pic-hero">
+            <source media="(max-width: 600px)" srcset="./imagens/marcos-pablo-372.webp 1x,./imagens/marcos-pablo-558.webp 1.5x" type="image/webp">
+            <img class="perfil-img" src="./imagens/marcos-pablo.webp" alt="Marcos Pablo desenvolvedor front-end" fetchpriority="high" width="640" height="640" sizes="(max-width: 600px) 100vw, 640px" loading="eager" decoding="async">
+        </picture>          
+
+        <div class="social-media social-media-hero">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=61563251585238" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil de Marcos Pablo no Facebook">
+                        <img src="./imagens/redes-sociais/logo-facebook-white.svg" alt="Facebook" width="28" height="28" loading="lazy" fetchpriority="low">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/marcos-pablo-dev-75b586321/" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil de Marcos Pablo no Linkedin">
+                        <img src="./imagens/redes-sociais/logo-linkedin-white.svg" alt="Linkedin" width="28" height="28" loading="lazy" fetchpriority="low">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/marcospablo.dev/" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil de Marcos Pablo no Instagram">
+                        <img src="./imagens/redes-sociais/logo-instagram-white.svg" alt="Instagram" width="28" height="28" loading="lazy" fetchpriority="low">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/Marcos-Pablo-Dev" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil de Marcos Pablo no GitHub">
+                        <img src="./imagens/redes-sociais/logo-github-white.svg" alt="GitHub" width="28" height="28" loading="lazy" fetchpriority="low">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <main>
+        <section class="about-container todo" id="about">
+            <div class="skills-container">
+                <header class="title-container">
+                    <h2 class="highlight">Habilidades</h2>
+                    <span class="title-decoration"></span>
+                </header>
+
+                <div class="icon-skills-container">
+                    <figure class="icon-skills">
+                        <img src="./imagens/icon-skills/html.svg" width="100" height="100" loading="lazy" fetchpriority="low" alt="Logo HTML">
+                        <figcaption>
+                            <span>HTML</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="icon-skills">
+                        <img src="./imagens/icon-skills/css.svg" width="100" height="100" loading="lazy" fetchpriority="low" alt="Logo CSS">
+                        <figcaption>
+                            <span>CSS</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="icon-skills">
+                        <img src="./imagens/icon-skills/js.svg" width="100" height="100" loading="lazy" fetchpriority="low" alt="Logo JavaScript">
+                        <figcaption>
+                            <span>Javascript</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="icon-skills">
+                        <img src="./imagens/icon-skills/wordpress.svg" width="100" height="100" loading="lazy" fetchpriority="low" alt="Logo WordPress">
+                        <figcaption>
+                            <span>WordPress</span>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="more-skills">
+                    <p>Estou em constante evolução no desenvolvimento web, aprimorando também minhas habilidades em <em>UI/UX Design</em> para criar sites cada vez melhores.</p>
+                </div>
+            </div>
+
+            <div class="services-container">
+                <header class="title-container">
+                    <h2 class="highlight">O que posso fazer para você</h2>
+                </header>
+
+                <div class="card-services-container">
+                    <div class="card-services">
+                        <h3 class="highlight">Criação de sites</h3>
+                        <p>Desenvolvo sites modernos e intuitivos, evoluindo minhas habilidades a cada projeto para oferecer sempre os melhores resultados.</p>
+                    </div>
+
+                    <div class="card-services">
+                        <h3 class="highlight">Portfólio</h3>
+                        <p>Construo portfólios personalizados para quem deseja mostrar seus melhores trabalhos com destaque e organização, facilitando o contato com clientes.</p>
+                    </div>
+
+                    <div class="card-services">
+                        <h3 class="highlight">Landing page</h3>
+                        <p>Desenvolvo páginas focadas em conversão, ideais para campanhas e apresentação de produtos ou serviços de maneira simples e eficaz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-container todo" id="portfolio">
+            <div class="portfolio-text">
+                <header class="title-container">
+                    <h2 class="highlight">Portfólio</h2>
+                    <span class="title-decoration title-decoration-portfolio"></span>
+                </header>
+                <p role="note">Interaja com as imagens para saber mais</p>
+            </div>
+    
+            <div class="projects-container">
+                <figure class="projects-card card-em-breve">
+                    <figcaption>
+                        <p id="em-breve">Em breve...</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="projects-card">
+                    <div class="opacity-project-card"></div>                    
+                    <picture>
+                        <source media="(max-width: 382px)" srcset="./imagens/projects/robsoncell(360).webp" width="360" height="203" type="image/webp">
+                        <source media="(max-width: 520px)" srcset="./imagens/projects/robsoncell(480).webp" width="480" height="270" type="image/webp">
+                        <img src="./imagens/projects/robsoncell(600).webp" width="600" height="338" loading="lazy" decoding="async" alt="Cátalogo Robson Cell">
+                    </picture>
+                    <figcaption class="projects-card-legend">
+                        <h3 class="highlight">Robson Cell</h3>
+                        <p>Catálogo online para a empresa Robson Cell, desenvolvido com WordPress.</p>
+                        <div class="link-project-card">
+                            <a href="https://robsoncell.com.br/" target="_blank" rel="noopener noreferrer" class="lk-project highlight" title="Abrir site Robson Cell">Ver Catálogo Robson Cell</a>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="projects-card">
+                    <div class="opacity-project-card"></div>
+                    <picture>
+                        <source media="(max-width: 382px)" srcset="./imagens/projects/vittadecor(360).webp" width="360" height="203" type="image/webp">
+                        <source media="(max-width: 520px)" srcset="./imagens/projects/vittadecor(480).webp" width="480" height="270" type="image/webp">
+                        <img src="./imagens/projects/vittadecor(600).webp" width="600" height="338" loading="lazy" decoding="async" alt="Projeto Vittadecor">
+                    </picture>
+                    <figcaption class="projects-card-legend">
+                        <h3 class="highlight">VittaDecor<span class="hide-text"> - design de interiores</span></h3>
+                        <p>Projeto buscando praticar ui/ux design.</p>
+                        <div class="link-project-card">
+                            <a href="https://github.com/Marcos-Pablo-Dev/VittaDecor/blob/main/vittadecor.jpg" target="_blank" rel="noopener noreferrer" class="lk-project highlight" title="Abrir projeto VittaDecor na versão desktop">Design desktop</a>
+                            <a href="https://github.com/Marcos-Pablo-Dev/VittaDecor/blob/main/vitadecor-mobile.jpg" target="_blank" rel="noopener noreferrer" class="lk-project highlight" title="Abrir projeto VittaDecor na versão mobile">Design mobile</a>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="projects-card">
+                    <div class="opacity-project-card"></div>
+                    <picture>
+                        <source media="(max-width: 382px)" srcset="./imagens/projects/eficientcontabil(360).webp" width="360" height="203" type="image/webp">
+                        <source media="(max-width: 520px)" srcset="./imagens/projects/eficientcontabil(480).webp" width="480" height="270" type="image/webp">
+                        <img src="./imagens/projects/eficientcontabil(600).webp" width="600" height="338" loading="lazy" decoding="async" alt="Projeto EficientContabil">
+                    </picture>
+                    <figcaption class="projects-card-legend">
+                        <h3 class="highlight">EficientContabil<span class="hide-text"> - Contabilidade</span></h3>
+                        <p>Projeto buscando praticar ui/ux design.</p>
+                        <div class="link-project-card">
+                            <a href="https://github.com/Marcos-Pablo-Dev/eficientcontabil/blob/main/EficientContabil.jpg" target="_blank" rel="noopener noreferrer" class="lk-project highlight" title="Abrir projeto EficientContabil">Design EficientContabil</a>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="projects-card">
+                    <div class="opacity-project-card"></div>
+
+                    <picture>
+                        <source media="(max-width: 382px)" srcset="./imagens/projects/nippontours(360).webp" width="360" height="203" type="image/webp">
+                        <source media="(max-width: 520px)" srcset="./imagens/projects/nippontours(480).webp" width="480" height="270" type="image/webp">
+                        <img src="./imagens/projects/nippontours(600).webp" width="600" height="338" loading="lazy" decoding="async" alt="Projeto Nippon Tours">
+                    </picture>
+
+                    <figcaption class="projects-card-legend">
+                        <h3 class="highlight">Nippon tours<span class="hide-text"> - agência de turismo</span></h3>
+                        <p>Projeto prático de um site para uma agência de turismo ao Japão.</p>
+                        <div class="link-project-card">
+                            <a href="https://marcos-pablo-dev.github.io/nippon-tours/index.html" target="_blank" rel="noopener noreferrer" class="lk-project highlight" title="Abrir site Nippon Tours">Acessar Projeto Nippon Tours</a>
+                        </div>
+                    </figcaption>
+                </figure>               
+            </div>
+
+            <div class="link-repository-ghub">
+                <a href="https://github.com/Marcos-Pablo-Dev" target="_blank" rel="noopener noreferrer" id="lk-repository" class="highlight" title="Abrir repositório completo GitHub">Ver repositório completo</a>
+            </div>
+        </section>
+    </main>
+
+    <section class="contact-container todo" id="contact">
+        <header class="title-container">
+            <h2 class="highlight">Entre em contato</h2>
+            <span class="title-decoration title-decoration-contact"></span>
+        </header>
+
+        <form id="contact-form">
+            <div class="form-input-container">
+                <label for="name">Nome:</label>
+                <input type="text" class="form-input" id="name" name="name" placeholder="Digite seu nome..." autocomplete="name" required>
+            </div>
+            <div class="form-input-container">
+                <label for="email">E-mail:</label>
+                <input type="email" class="form-input" id="email" name="email" placeholder="Digite seu e-mail..." autocomplete="email" required>
+            </div>
+            <div class="form-input-container">
+                <label for="subject">Assunto:</label>
+                <input type="text" class="form-input" name="subject" id="subject" placeholder="Assunto..." autocomplete="off" minlength="3" required>
+            </div>
+            <div class="form-input-container">
+                <label for="message">Mensagem:</label>
+                <textarea name="message" id="message" class="form-input" placeholder="Digite sua mensagem..." autocomplete="off" minlength="10" required></textarea>
+            </div>
+            <div class="btn-form-submit">
+                <button type="submit" class="highlight" id="btn-form" aria-label="Enviar formulário de contato">Enviar</button>
+            </div>
+        </form>
+
+        <div class="social-media social-media-contact">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=61563251585238" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil de Marcos Pablo no Facebook">
+                        <img src="./imagens/redes-sociais/logo-facebook.svg" alt="Facebook" width="32" height="32" loading="lazy" fetchpriority="low">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/marcos-pablo-dev-75b586321/" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil de Marcos Pablo no Linkedin">
+                        <img src="./imagens/redes-sociais/logo-linkedin.svg" alt="Linkedin" width="32" height="32" loading="lazy" fetchpriority="low">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/marcospablo.dev/" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil de Marcos Pablo no Instagram">
+                        <img src="./imagens/redes-sociais/logo-instagram.svg" alt="Instagram" width="32" height="32" loading="lazy" fetchpriority="low">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/Marcos-Pablo-Dev" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil de Marcos Pablo no GitHub">
+                        <img src="./imagens/redes-sociais/logo-github.svg" alt="GitHub" width="32" height="32" loading="lazy" fetchpriority="low">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy;Marcospablo.dev | 2025</p>
+    </footer>
+
+    <script src="./js/animations.js" defer></script>
+    <script src="./js/header.js" defer></script>
+    <script src="./js/btns.js" defer></script>
+    <script src="./js/form.js" defer></script>
+</body>
+</html>

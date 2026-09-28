@@ -1,0 +1,38 @@
+.form-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.form-input {
+    width: 500px;
+    padding: 12px;
+    background-color: var(--rich-black);
+    color: #fff;
+    border: 1px solid var(--light-s-green);
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.5);
+    outline: none;
+    transition: 0.15s ease-in-out;
+}
+
+#message {
+    height: 96px;
+}
+
+.form-input::placeholder {
+    color: #837B71;
+}
+
+.form-input:focus  {
+    transform: scale(1.05);
+}
+
+/*-- Media Queries --*/
+
+@media (max-width: 600px) {
+    .form-input {
+        width: 90vw;
+    }
+}

@@ -1,0 +1,95 @@
+/*-- BTNS --*/
+
+    /*-- Portfolio --*/
+
+.lk-project {
+    width: fit-content;
+    font-size: 0.9rem;
+    color: var(--light-s-green);
+    background-color: var(--midnight-green);
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 6px rgba(0,0,0,.28);
+    text-decoration: none;
+    transform-origin: center;
+    transition: 0.1s ease;
+}
+
+.lk-project.clicked {
+    transform: scale(0.9);
+}
+
+        /*-- Link repositorio GitHub --*/
+
+.link-repository-ghub {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 60px;
+    padding-right: 20px;
+}
+
+#lk-repository {
+    color: var(--orange);
+    background-color: var(--rich-black);
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 2px rgba(0,0,0,.5);
+    transition: 0.2s;
+}
+
+#lk-repository.active {
+    transform: scale(1.03);
+}
+
+    /*-- Form --*/
+
+#btn-form {
+    width: 100%;
+    max-width: 500px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 12px 0;
+    padding: 12px 0;
+    color: var(--rich-black);
+    background-color: var(--light-s-green);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.5);
+    transition: 0.1s ease-in-out;
+}
+
+#btn-form.active {
+    cursor: pointer;
+    background-color: var(--midnight-green);
+    color: #fff;
+    filter: brightness(0.8);
+}
+
+@media (max-width: 1024px) {
+    .link-hero-container {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .link-hero-container {
+        width: 100%;
+        min-width: 200px;
+    }
+
+
+    /*-- Link gHub Repositore --*/
+
+    .link-repository-ghub {
+        justify-content: center;
+        padding: 0;
+    }
+
+    /*-- Form --*/
+
+    #btn-form {
+        max-width: 100%;
+    }
+}

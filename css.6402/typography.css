@@ -1,0 +1,137 @@
+/*-- Typography--*/
+
+    /*-- Title Decoration --*/
+
+.title-container {
+    width: fit-content;
+    margin: auto;
+}
+
+.title-decoration {
+    display: block;
+    width: 80%;
+    height: 2px;
+    background-color: var(--light-s-green);
+    margin: auto;
+}
+
+.title-decoration-services {
+    margin-top: 0;
+}
+
+.title-decoration-portfolio {
+    background-color: var(--orange);
+}
+
+.title-decoration-contact {
+    background-color: #fff;
+}
+
+    /*-- Typography About Container --*/
+
+.about-container h2, .more-skills em, .card-services h3 {
+    color: var(--light-s-green);
+}
+
+.card-services h3 {
+    margin-bottom: 12px;
+}
+
+.card-services p {
+    font-weight: 200;
+}
+
+    /*-- Typography Portfolio --*/
+
+.portfolio-text h2 {
+    color: var(--orange);
+}
+
+.portfolio-text p {
+    font-weight: 200;
+    margin-top: 8px;
+}
+
+        /*-- Card Em Breve --*/
+
+.card-em-breve #em-breve {
+    font-size: 1.5rem;
+}
+
+        /*-- Portfolio Figure Figcaption --*/
+
+.projects-card figcaption h3 {
+    color: var(--light-s-green);
+}
+
+.projects-card figcaption p {
+    font-weight: 200;
+}
+
+@media (max-width: 1280px) {
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .content-hero p {
+        font-size: 1rem;
+        margin: 8px 0 24px 0;
+    }   
+}
+
+@media (max-width: 1024px) {
+    .h1-typewriter {
+        margin: auto;
+    }
+    .content-hero, .content-hero h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    /*-- Hero --*/
+
+    .content-hero h2 {
+        font-size: 1.5rem;
+    }
+
+    /*-- Portfólio --*/
+
+    .projects-card figcaption p {
+        font-size: 0.9rem;
+    }
+
+    /*-- footer --*/
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .content-hero h2 {
+        font-size: 1.2rem;
+    }
+
+    .content-hero p {
+        font-size: 0.9rem;
+    }
+
+    .projects-card figcaption p {
+        font-size: 0.75rem;
+    }
+    
+    .hide-text {
+        display: none;
+    }
+}
+
+@media (max-width: 280px) {
+
+    /*-- Portfólio --*/
+    .projects-card figcaption p {
+        display: none;
+    }    
+}
